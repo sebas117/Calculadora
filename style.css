@@ -14,13 +14,13 @@ body {
     justify-content: center;
     align-items: center;
     font-family: sans-serif;
-    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
 
 }
 
 .calculadora {
 
-    background-color: #222222;
+    background-color: #08024e;
     display: flex;
     flex-direction: column;
     padding: 15px;
