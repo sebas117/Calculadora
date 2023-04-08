@@ -5,8 +5,6 @@ const display = document.querySelector('.display');
 
 
 document.addEventListener('keydown', (e) => {
-
-    //console.log(e);
     const valor = e.key.toString();
     calcular(valor)
 })
