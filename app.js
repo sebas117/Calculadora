@@ -1,6 +1,6 @@
-const keys2 = document.querySelectorAll('button');
+
 const keys = [...document.querySelectorAll('button')];
-const listKeycode = keys.map(element => element.dataset.key)
+const listKeycode = keys.map(element => element.dataset.key);
 const display = document.querySelector('.display');
 
 
@@ -13,8 +13,7 @@ document.addEventListener('click', (e) => {
 
 
     const valor = e.target.dataset.key;
-    calcular(valor)
-
+    calcular(valor);
 
 })
 
