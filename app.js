@@ -2,14 +2,17 @@ const keys = [...document.querySelectorAll("button")];
 const listKeycode = keys.map((element) => element.dataset.key);
 const display = document.querySelector(".display");
 const table = document.querySelector("table");
+let operacionDone = false;
 
 document.addEventListener("keydown", (e) => {
-  const valor = e.key.toString();
+  const valor = e.keyCode.toString();
+  console.log(valor);
   calcular(valor);
 });
 
 document.addEventListener("click", (e) => {
   const valor = e.target.dataset.key;
+  console.log(valor);
   calcular(valor);
 });
 
@@ -54,11 +57,16 @@ const calcular = (valor) => {
         const calcul = eval(display.textContent);
         displayLog(display.textContent);
         display.textContent = calcul;
+        operacionDone = true;
 
         /*Crear tabla Html donde se registren 2 columans la primera los log de las operaciones realizadas (ej: 3 + 5 *9) y la seguna la fecha actual con hora de la operacion (07/04/2023 19:36)*/
         break;
 
       default:
+        if (operacionDone) {
+          display.textContent = "";
+          operacionDone = false;
+        }
         const indexKeycode = listKeycode.indexOf(valor);
         const tecla = keys[indexKeycode];
         display.textContent += tecla.innerHTML;
